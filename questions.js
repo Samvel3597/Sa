@@ -59,6 +59,7 @@ function addQuestion(item) {
 
 function initQuestions() {
 
+    //Salu server
     fetch('http://87.241.142.231:45678/Word/hs/API/test', {
         method: 'GET',
         headers: {
