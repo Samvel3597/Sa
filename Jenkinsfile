@@ -16,18 +16,7 @@ pipeline {
                 sh 'docker images'
                 sh 'docker --help'
             }
-        }
-        stage('Docker up') {
-            steps {
-                sh 'docker Compose up '
-            }
-        }
-        stage('Docker check 1') {
-            steps {
-                sh 'docker ps -a'
-                sh 'docker images'
-            }
-        }
+
         stage('Send message') {
             steps {
                 sh 'curl https://api.telegram.org/bot${My_Bot}/sendMessage?chat_id=${My_Chat_id}&text=From Jenkins Ok'
