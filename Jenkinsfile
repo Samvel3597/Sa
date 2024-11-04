@@ -17,8 +17,7 @@ pipeline {
                 sh 'docker --help'
             }
 
-        stage('Send message') {
-            steps {
+            steps('Send message') {
                 sh 'curl https://api.telegram.org/bot${My_Bot}/sendMessage?chat_id=${My_Chat_id}&text=From Jenkins Ok'
             }
         }
