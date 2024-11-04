@@ -2,9 +2,14 @@ pipeline {
     agent { label 'Jenkins' }
 
     stages {
-        stage ('Docker version 1'){
+        stage('Remove old files') {
             steps {
-                sh 'docker version'
+                sh 'rm -r -f Sa/'
+            }
+        }
+        stage('Git clone') {
+            steps {
+                sh 'git clone https://github.com/Samvel3597/Sa.git'
             }
         }
     }
