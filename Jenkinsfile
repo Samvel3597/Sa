@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh 'docker ps -a'
                 sh 'docker images'
+                sh 'docker --help'
             }
         }
         stage('Docker up') {
