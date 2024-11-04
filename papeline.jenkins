@@ -2,7 +2,7 @@ pipeline {
     agent { label 'Jenkins' }
 
     stages {
-        stage ('Docker version'){
+        stage ('Docker version 1'){
             steps {
                 sh "echo $USER"
                 sh 'docker version'
