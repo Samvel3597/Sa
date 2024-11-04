@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage ('Docker version 1'){
             steps {
-                sh "echo $USER"
                 sh 'docker version'
             }
         }
