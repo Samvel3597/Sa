@@ -2,17 +2,21 @@ pipeline {
     agent { label 'Jenkins' }
 
     stages {
-        stage('Remove old files') {
+        stage('Docker check') {
             steps {
-                sh 'rm -r -f Sa/'
+                sh 'docker ps -a'
+                sh 'docker images'
             }
         }
-        stage('Check') {
+        stage('Docker up') {
             steps {
-                sh 'echo ===================================='
-                sh 'pwd'
-                sh 'ls -la'
-                sh 'cat Jenkinsfile'
+                sh 'docker compose up'
+            }
+        }
+        stage('Docker check 1') {
+            steps {
+                sh 'docker ps -a'
+                sh 'docker images'
             }
         }
     }
